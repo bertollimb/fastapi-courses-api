@@ -31,7 +31,7 @@ async def post_course(course: Course):
     course_data = course.dict()
     course_data.pop("id", None)
     courses[next_id] = course_data
-    return course 
+    return course_data
 
 @app.put('/courses/{course_id}', description='Update an existing course in your list.', summary='Update course.')
 async def put_course(course_id: int, course: Course):
